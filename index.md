@@ -1,42 +1,34 @@
-<!-- Avatar -->
 <p align="center">
-  <img src="my_photo.jpg" width="180" alt="Rustam Ramazanov" style="border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.18); margin-bottom: 18px;">
+  <img src="my_photo.jpg" width="160" alt="Rustam Ramazanov" style="border-radius: 16px;">
 </p>
 
-<h1 align="center" style="margin-bottom: 0;">Hi, I'm <span style="color:#007acc;">Rustam Ramazanov</span> <img src="https://github.com/rajput2107/rajput2107/blob/master/Assets/Hi.gif" width="28"></h1>
-<h3 align="center" style="margin-top: 0; font-weight: 400; color: #444;">Middle Full Stack Engineer</h3>
+<h1 align="center">Hi, I'm <span style="color:#007acc;">Rustam Ramazanov</span> 👋</h1>
+<h3 align="center">Middle Full Stack Engineer</h3>
 
-<p align="center" style="font-size: 1.1em;">
+<p align="center">
+  <a href="mailto:rystamrv@gmail.com"><img src="https://img.shields.io/badge/Email-rystamrv@gmail.com-green?style=flat-square&logo=gmail" /></a>
   <img src="https://img.shields.io/badge/Location-Kryvyi%20Rih,%20Ukraine-blue?style=flat-square&logo=google-maps" />
-  <a href="mailto:rystamrv@gmail.com">
-    <img src="https://img.shields.io/badge/Email-rystamrv@gmail.com-green?style=flat-square&logo=gmail" />
-  </a>
-  <a href="https://github.com/rustamrv">
-    <img src="https://img.shields.io/badge/GitHub-rustamrv-black?style=flat-square&logo=github" />
-  </a>
+  <a href="https://github.com/rustamrv"><img src="https://img.shields.io/badge/GitHub-rustamrv-black?style=flat-square&logo=github" /></a>
 </p>
 
 ---
 
-<section style="max-width: 800px; margin: 0 auto;">
-
 ### 👨‍💻 About Me
 
-> "Turning ideas into scalable products with code and creativity."
+I'm a passionate **Full Stack Engineer** with experience in building scalable web applications and integrating complex systems. I enjoy working with modern technologies and solving challenging problems.
 
-I'm a passionate <b>Full Stack Engineer</b> with experience in building scalable web applications and integrating complex systems. I enjoy working with modern technologies and solving challenging problems.
+---
 
-#### 🛠️ Tech Stack
-<p>
-  <img src="https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB"/>
-  <img src="https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white"/>
-  <img src="https://img.shields.io/badge/NestJS-E0234E?style=flat&logo=nestjs&logoColor=white"/>
-  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white"/>
-  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white"/>
-  <img src="https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazon-aws&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white"/>
-</p>
+### 🛠️ Tech Stack
+
+![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=nodedotjs&logoColor=white)
+![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat&logo=nestjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat&logo=postgresql&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat&logo=amazon-aws&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
 
 - **Frontend:** React, Tailwind CSS, Redux Toolkit, React Hook Form, Zod  
 - **Backend:** Node.js (Express, NestJS), Python (FastAPI, Django), TypeScript, Jest  
@@ -44,14 +36,15 @@ I'm a passionate <b>Full Stack Engineer</b> with experience in building scalable
 - **Cloud:** AWS  
 - **Other:** Docker, Git, REST API, GraphQL
 
-#### 🔗 Integrations
-Nova Poshta, Justin, Meest Express, Stripe, PayPal, PrivatBank, Rozetka Pay, Telegram API, RevenueCat
+---
 
-#### 🌍 Languages
+### 🌍 Languages
+
 - English (Intermediate-low, B1)
 - Ukrainian (Upper-intermediate, B2)
 - Russian (Native, C2)
 
+---
 
 ### 🏆 Recent Experience
 
@@ -81,6 +74,8 @@ Nova Poshta, Justin, Meest Express, Stripe, PayPal, PrivatBank, Rozetka Pay, Tel
 
 ---
 
-<p align="center" style="margin-top: 32px;">
-  <a href="mailto:rystamrv@gmail.com" style="text-decoration:none; color:#fff; background:#007acc; padding:12px 28px; border-radius:8px; font-size:1.2em; font-weight:bold;">Contact Me</a>
+<p align="center">
+  <a href="mailto:rystamrv@gmail.com" style="text-decoration:none;">
+    <img src="https://img.shields.io/badge/Contact%20Me-007acc?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
 </p>
