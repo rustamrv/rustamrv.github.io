@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rustam Ramazanov - Full Stack Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            border-radius: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .profile-img {
+            border-radius: 50%;
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .name {
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3em;
+            font-weight: bold;
+            margin: 25px 0 15px 0;
+        }
+        
+        .title {
+            color: #7f8c8d;
+            font-size: 1.8em;
+            font-weight: 300;
+            margin: 0 0 25px 0;
+            letter-spacing: 2px;
+        }
+        
+        .contact-badges {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .contact-badges img {
+            margin: 0 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-badges img:hover {
+            transform: translateY(-3px);
+        }
+        
+        .section {
+            margin: 50px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            border-left: 4px solid #3498db;
+        }
+        
+        .section h2 {
+            color: #2c3e50;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .section h3 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin: 20px 0 15px 0;
+            text-align: center;
+        }
+        
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin: 25px 0;
+        }
+        
+        .tech-badge {
+            background: linear-gradient(45deg, #3498db, #5dade2);
+            color: white;
+            padding: 12px 18px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 0.95em;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .tech-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.3);
+        }
+        
+        .experience-block {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 25px 0;
+            box-shadow: 0 12px 30px rgba(116, 185, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .experience-block:hover {
+            transform: translateY(-5px);
+        }
+        
+        .experience-block.blue {
+            background: linear-gradient(135deg, #81ecec 0%, #00cec9 100%);
+            box-shadow: 0 12px 30px rgba(129, 236, 236, 0.2);
+        }
+        
+        .experience-block h3 {
+            color: white;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .experience-block h4 {
+            color: white;
+            font-size: 1.3em;
+            margin: 25px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .experience-block ul {
+            list-style: none;
+        }
+        
+        .experience-block li {
+            margin: 12px 0;
+            padding: 8px 0;
+            border-left: 3px solid rgba(255, 255, 255, 0.5);
+            padding-left: 15px;
+        }
+        
+        .languages {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .language-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            color: white;
+            min-width: 140px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .language-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .language-card.english { 
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        }
+        .language-card.ukrainian { 
+            background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+        }
+        .language-card.russian { 
+            background: linear-gradient(135deg, #81ecec 0%, #00cec9 100%);
+        }
+        
+        .contact-button {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .contact-button img {
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-button img:hover {
+            transform: scale(1.1);
+        }
+        
+        .quote {
+            text-align: center;
+            font-style: italic;
+            color: #7f8c8d;
+            margin: 50px 0;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+        }
+        
+        .quote p {
+            font-size: 1.3em;
+            font-weight: 500;
+        }
+        
+        hr {
+            border: none;
+            height: 2px;
+            background: linear-gradient(45deg, #3498db, #5dade2);
+            margin: 40px 0;
+            border-radius: 1px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            .name {
+                font-size: 2.2em;
+            }
+            
+            .title {
+                font-size: 1.4em;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .languages {
+                gap: 15px;
+            }
+            
+            .language-card {
+                min-width: 120px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="my_photo.jpg" alt="Rustam Ramazanov" class="profile-img">
+            <h1 class="name">Hi, I'm Rustam Ramazanov 👋</h1>
+            <h2 class="title">Middle Full Stack Engineer</h2>
+        </div>
+
+        <div class="contact-badges">
+            <a href="mailto:rystamrv@gmail.com">
+                <img src="https://img.shields.io/badge/📧%20Email-rystamrv@gmail.com-007acc?style=for-the-badge&logo=gmail&logoColor=white" />
+            </a>
+            <img src="https://img.shields.io/badge/📍%20Kryvyi%20Rih,%20Ukraine-333?style=for-the-badge&logo=google-maps&logoColor=white" />
+            <a href="https://github.com/rustamrv">
+                <img src="https://img.shields.io/badge/🐙%20GitHub-rustamrv-333?style=for-the-badge&logo=github&logoColor=white" />
+            </a>
+            <a href="https://www.linkedin.com/in/rustamrv/">
+                <img src="https://img.shields.io/badge/💼%20LinkedIn-rustamrv-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+            </a>
+        </div>
+
+        <hr>
+
+        <div class="section">
+            <h2>🚀 About Me</h2>
+            <p style="font-size: 1.1em; text-align: center; margin-bottom: 20px;">I'm a passionate <strong>Full Stack Engineer</strong> with experience in building scalable web applications and integrating complex systems. I enjoy working with modern technologies and solving challenging problems.</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
+                <div style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%); color: white; padding: 20px; border-radius: 15px; text-align: center;">
+                    <div style="font-size: 1.5em; margin-bottom: 10px;">🎯</div>
+                    <div style="font-weight: bold; margin-bottom: 8px;">What drives me</div>
+                    <div>Creating efficient, scalable solutions that make a real impact</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%); color: white; padding: 20px; border-radius: 15px; text-align: center;">
+                    <div style="font-size: 1.5em; margin-bottom: 10px;">💡</div>
+                    <div style="font-weight: bold; margin-bottom: 8px;">My approach</div>
+                    <div>Clean code, best practices, and continuous learning</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #81ecec 0%, #00cec9 100%); color: white; padding: 20px; border-radius: 15px; text-align: center;">
+                    <div style="font-size: 1.5em; margin-bottom: 10px;">🌟</div>
+                    <div style="font-weight: bold; margin-bottom: 8px;">My goal</div>
+                    <div>Building products that users love to use</div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="section">
+            <h2>🛠️ Tech Stack</h2>
+            
+            <h3>Frontend</h3>
+            <div class="tech-badges">
+                <span class="tech-badge">⚛️ React</span>
+                <span class="tech-badge">📘 TypeScript</span>
+                <span class="tech-badge">🎨 Tailwind CSS</span>
+                <span class="tech-badge">🔄 Redux</span>
+            </div>
+
+            <h3>Backend</h3>
+            <div class="tech-badges">
+                <span class="tech-badge">🟢 Node.js</span>
+                <span class="tech-badge">🟣 NestJS</span>
+                <span class="tech-badge">🐍 Python</span>
+                <span class="tech-badge">⚡ FastAPI</span>
+            </div>
+
+            <h3>Databases</h3>
+            <div class="tech-badges">
+                <span class="tech-badge">🐘 PostgreSQL</span>
+                <span class="tech-badge">🐬 MySQL</span>
+                <span class="tech-badge">🍃 MongoDB</span>
+                <span class="tech-badge">🔴 Redis</span>
+                <span class="tech-badge">🟦 DynamoDB</span>
+            </div>
+
+            <h3>Cloud & DevOps</h3>
+            <div class="tech-badges">
+                <span class="tech-badge">☁️ AWS</span>
+                <span class="tech-badge">🐳 Docker</span>
+                <span class="tech-badge">⚙️ GitHub Actions</span>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="section">
+            <h2>🏆 Professional Experience</h2>
+
+            <div class="experience-block">
+                <h3>Backend Developer (2021 - present)</h3>
+                <p style="text-align: center; margin-bottom: 25px;"><strong>🎯 Key Achievements:</strong></p>
+                <ul>
+                    <li><strong>🚀 Scalable Architecture:</strong> Developed and maintained scalable backend architectures for e-commerce and SaaS platforms, ensuring high performance and reliability</li>
+                    <li><strong>🔌 API Development:</strong> Designed and implemented RESTful and GraphQL APIs using Node.js (Express, NestJS) and Python (FastAPI, Django)</li>
+                    <li><strong>💳 Payment Integration:</strong> Integrated third-party services including payment gateways (Stripe, PayPal, PrivatBank, Rozetka Pay) and delivery providers (Nova Poshta, Justin, Meest Express)</li>
+                    <li><strong>☁️ Cloud Infrastructure:</strong> Configured multi-environment deployments on AWS, utilizing Lambda, API Gateway, and RDS</li>
+                    <li><strong>⚡ Real-time Features:</strong> Implemented live notifications and data updates using WebSockets and optimized database queries</li>
+                    <li><strong>🔐 Authentication:</strong> Managed user authentication, authorization, and subscription logic with RevenueCat integration</li>
+                    <li><strong>🔄 Webhook Management:</strong> Developed webhook handlers for real-time event processing</li>
+                    <li><strong>🧪 Quality Assurance:</strong> Wrote comprehensive unit and integration tests with Jest and Pytest</li>
+                    <li><strong>📊 Performance Optimization:</strong> Monitored and optimized backend performance, resolving bottlenecks proactively</li>
+                </ul>
+            </div>
+
+            <div class="experience-block blue">
+                <h3>Full Stack Developer (2024 - present)</h3>
+                <p style="text-align: center; margin-bottom: 25px;"><strong>🎯 Key Achievements:</strong></p>
+                
+                <h4>🤖 AI Platform Project:</h4>
+                <ul>
+                    <li><strong>AI Platform Development:</strong> Developed a full-featured AI platform with 50+ components for content generation</li>
+                    <li><strong>Real-time System:</strong> Implemented complex real-time content generation system using WebSocket (Socket.io)</li>
+                    <li><strong>Payment Integration:</strong> Integrated Stripe API with subscription system and credit management</li>
+                    <li><strong>Modular Architecture:</strong> Created modular architecture with reusable components for scalability</li>
+                    <li><strong>Multi-Content Support:</strong> Added support for both image and video content generation</li>
+                    <li><strong>Inspiration System:</strong> Implemented interactive gallery and inspiration system</li>
+                    <li><strong>Performance Optimization:</strong> Optimized performance with lazy loading and debouncing</li>
+                </ul>
+
+                <h4>🖥️ Admin Panel Project:</h4>
+                <ul>
+                    <li><strong>Admin Panel Development:</strong> Developed, optimized and maintained comprehensive admin panel with UI/UX improvements, i18n support, and responsive layouts</li>
+                    <li><strong>Service Management:</strong> Implemented service provider and facilities management modules with full CRUD operations and advanced filtering</li>
+                    <li><strong>File Management:</strong> Integrated robust file upload system, worked with attachments, and configured optimized database structure</li>
+                    <li><strong>System Optimization:</strong> Improved application stability, fixed critical bugs, and removed outdated components for better performance</li>
+                    <li><strong>Architecture:</strong> Actively participated in architectural changes and discussed new features implementation with the team</li>
+                    <li><strong>Internationalization:</strong> Implemented multi-language support (i18n) for better user experience across different regions</li>
+                    <li><strong>Database:</strong> Refactored and optimized database structure for better performance and scalability</li>
+                </ul>
+
+                <h4>🔐 Authentication & Analytics:</h4>
+                <ul>
+                    <li><strong>Authentication:</strong> Implemented NextAuth.js for secure user authentication</li>
+                    <li><strong>Analytics:</strong> Integrated analytics and user tracking for business insights</li>
+                    <li><strong>Monetization:</strong> Created monetizable platform with subscription and credit systems</li>
+                </ul>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="section">
+            <h2>🔧 Core Technologies</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin: 15px 0; padding: 15px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"><strong>Frontend:</strong> React, Next.js, TypeScript, Tailwind CSS, Redux Toolkit, Zustand, React Hook Form, Zod</li>
+                <li style="margin: 15px 0; padding: 15px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"><strong>Backend:</strong> Node.js (Express, NestJS), Python (FastAPI, Django), TypeScript, Jest</li>
+                <li style="margin: 15px 0; padding: 15px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"><strong>Databases:</strong> PostgreSQL, MySQL, MongoDB, Redis, DynamoDB</li>
+                <li style="margin: 15px 0; padding: 15px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"><strong>Cloud:</strong> AWS (Lambda, API Gateway, RDS, S3)</li>
+                <li style="margin: 15px 0; padding: 15px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"><strong>Authentication:</strong> NextAuth.js, JWT</li>
+                <li style="margin: 15px 0; padding: 15px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"><strong>Payments:</strong> Stripe API, PayPal, PrivatBank, Rozetka Pay</li>
+                <li style="margin: 15px 0; padding: 15px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"><strong>Real-time:</strong> WebSocket (Socket.io), Server-Sent Events</li>
+                <li style="margin: 15px 0; padding: 15px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"><strong>File Handling:</strong> Multipart uploads, drag & drop, file compression</li>
+                <li style="margin: 15px 0; padding: 15px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);"><strong>Other:</strong> Docker, Git, REST API, GraphQL, WebSockets, i18n, CI/CD</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <div class="section">
+            <h2>🌍 Languages</h2>
+            <div class="languages">
+                <div class="language-card english">
+                    <div style="font-size: 1.3em; font-weight: bold;">English</div>
+                    <div style="font-size: 1em;">Intermediate-low (B1)</div>
+                </div>
+                <div class="language-card ukrainian">
+                    <div style="font-size: 1.3em; font-weight: bold;">Ukrainian</div>
+                    <div style="font-size: 1em;">Upper-intermediate (B2)</div>
+                </div>
+                <div class="language-card russian">
+                    <div style="font-size: 1.3em; font-weight: bold;">Russian</div>
+                    <div style="font-size: 1em;">Native (C2)</div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="contact-button">
+            <a href="mailto:rystamrv@gmail.com">
+                <img src="https://img.shields.io/badge/📧%20Let's%20Connect!-007acc?style=for-the-badge&logo=gmail&logoColor=white" />
+            </a>
+        </div>
+
+        <hr>
+
+        <div class="quote">
+            <p><em>"The best code is the code that never needs to be written twice." 🚀</em></p>
+        </div>
+    </div>
+</body>
+</html>
